@@ -7,19 +7,8 @@ namespace DatabaseStreaming.API
     [Route("[controller]")]
     public class PeopleAsEnumerableController : ControllerBase
     {
-        private readonly ILogger<PeopleAsEnumerableController> _logger;
-        private readonly PersonContext _dbContext;
-
-        public PeopleAsEnumerableController(ILogger<PeopleAsEnumerableController> logger, PersonContext dbContext)
-        {
-            _logger = logger;
-            _dbContext = dbContext;
-        }
-
         [HttpGet(Name = "GetPeople")]
-        public IEnumerable<Person> Get()
-        {
-            return _dbContext.People.AsEnumerable();
-        }
+        public IEnumerable<Person> Get([FromServices] PersonContext dbContext) =>
+            dbContext.People.AsEnumerable();
     }
 }

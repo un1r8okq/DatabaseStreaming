@@ -12,6 +12,7 @@ foreach (var endpoint in endpoints)
 {
     var times = await MeasureAvgEndpointDuration(httpClient, iterations, endpoint);
     Console.WriteLine($"GET /{endpoint} avg {times}ms");
+    Console.WriteLine();
 }
 
 async Task<double> MeasureAvgEndpointDuration(HttpClient httpClient, int iterations, string endpoint)
