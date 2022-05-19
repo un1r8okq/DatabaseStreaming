@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace DatabaseStreaming.API
+namespace DatabaseStreaming.Data
 {
     public class PersonContext : DbContext
     {

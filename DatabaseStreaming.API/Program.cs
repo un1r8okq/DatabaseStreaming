@@ -1,4 +1,4 @@
-using DatabaseStreaming.API;
+using DatabaseStreaming.Data;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);

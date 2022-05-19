@@ -1,3 +1,4 @@
+using DatabaseStreaming.Data;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DatabaseStreaming.API
