@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace DatabaseStreamingAPI
+namespace DatabaseStreaming.API
 {
     [ApiController]
     [Route("[controller]")]

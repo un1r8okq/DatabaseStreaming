@@ -1,4 +1,4 @@
-﻿namespace DatabaseStreamingAPI
+﻿namespace DatabaseStreaming.API
 {
     public class Person
     {
