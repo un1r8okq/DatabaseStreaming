@@ -1,14 +1,14 @@
 using DatabaseStreaming.Data;
 using Microsoft.AspNetCore.Mvc;
 
-namespace DatabaseStreaming.API
+namespace DatabaseStreaming.API.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class PeopleAsEnumerableController : ControllerBase
+    public class PeopleAsListController : ControllerBase
     {
-        [HttpGet(Name = "GetPeople")]
+        [HttpGet]
         public IEnumerable<Person> Get([FromServices] PersonContext dbContext) =>
-            dbContext.People.AsEnumerable();
+            dbContext.People.ToList();
     }
 }

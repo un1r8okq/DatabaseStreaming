@@ -3,6 +3,7 @@
 var endpoints = new string[]
 {
     "PeopleAsEnumerable",
+    "PeopleAsList",
 };
 
 var iterations = 3;
@@ -10,23 +11,24 @@ var httpClient = new HttpClient();
 
 foreach (var endpoint in endpoints)
 {
-    var times = await MeasureAvgEndpointDuration(httpClient, iterations, endpoint);
-    Console.WriteLine($"GET /{endpoint} avg {times}ms");
+    var times = await MeasureAvgEndpointDuration(iterations, endpoint);
+    Console.WriteLine($"Average: GET /{endpoint} {times}ms");
     Console.WriteLine();
 }
 
-async Task<double> MeasureAvgEndpointDuration(HttpClient httpClient, int iterations, string endpoint)
+async Task<double> MeasureAvgEndpointDuration(int iterations, string endpoint)
 {
     var times = new long[iterations];
     for (var i = 0; i < iterations; i++)
     {
-        times[i] = await MeasureEndpointDuration(httpClient, endpoint);
+        times[i] = await MeasureEndpointDuration(endpoint);
+        Console.WriteLine($"Iteration {i}: GET /{endpoint} {times[i]}ms");
     }
 
     return times.Average();
 }
 
-async Task<long> MeasureEndpointDuration(HttpClient httpClient, string endpoint)
+async Task<long> MeasureEndpointDuration(string endpoint)
 {
     var timer = new Stopwatch();
     timer.Start();
@@ -36,6 +38,5 @@ async Task<long> MeasureEndpointDuration(HttpClient httpClient, string endpoint)
     await result.Content.ReadAsStringAsync();
 
     timer.Stop();
-    Console.WriteLine($"GET /{endpoint} {timer.ElapsedMilliseconds}ms");
     return timer.ElapsedMilliseconds;
 }
