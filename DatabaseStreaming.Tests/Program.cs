@@ -5,6 +5,7 @@ var endpoints = new string[]
     "PeopleAsEnumerable",
     "PeopleAsList",
     "PeopleAsArray",
+    "PeopleAsAsyncEnumerable",
 };
 
 var iterations = 3;
@@ -16,6 +17,8 @@ foreach (var endpoint in endpoints)
     Console.WriteLine($"Average: GET /{endpoint} {times:0}ms");
     Console.WriteLine();
 }
+
+Console.WriteLine();
 
 async Task<double> MeasureAvgEndpointDuration(int iterations, string endpoint)
 {

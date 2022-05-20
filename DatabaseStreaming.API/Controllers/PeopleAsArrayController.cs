@@ -1,5 +1,6 @@
 using DatabaseStreaming.Data;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace DatabaseStreaming.API.Controllers
 {
@@ -8,7 +9,7 @@ namespace DatabaseStreaming.API.Controllers
     public class PeopleAsArrayController : ControllerBase
     {
         [HttpGet]
-        public Person[] Get([FromServices] PersonContext dbContext) =>
-            dbContext.People.ToArray();
+        public async Task<Person[]> Get([FromServices] PersonContext dbContext) =>
+            await dbContext.People.ToArrayAsync();
     }
 }

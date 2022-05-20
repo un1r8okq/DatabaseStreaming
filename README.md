@@ -5,18 +5,23 @@ Right now it just creates a tonne of data, hopefully soon I can play with IAsync
 
 ## Current output
 ```
-Iteration 0: GET /PeopleAsEnumerable 5483ms
-Iteration 1: GET /PeopleAsEnumerable 4249ms
-Iteration 2: GET /PeopleAsEnumerable 4094ms
-Average: GET /PeopleAsEnumerable 4609ms
+Iteration 0: GET /PeopleAsEnumerable 6571ms
+Iteration 1: GET /PeopleAsEnumerable 4385ms
+Iteration 2: GET /PeopleAsEnumerable 4324ms
+Average: GET /PeopleAsEnumerable 5093ms
 
-Iteration 0: GET /PeopleAsList 2538ms
-Iteration 1: GET /PeopleAsList 2291ms
-Iteration 2: GET /PeopleAsList 2389ms
-Average: GET /PeopleAsList 2406ms
+Iteration 0: GET /PeopleAsList 3135ms
+Iteration 1: GET /PeopleAsList 2718ms
+Iteration 2: GET /PeopleAsList 3001ms
+Average: GET /PeopleAsList 2951ms
 
-Iteration 0: GET /PeopleAsArray 2392ms
-Iteration 1: GET /PeopleAsArray 2284ms
-Iteration 2: GET /PeopleAsArray 2450ms
-Average: GET /PeopleAsArray 2375ms
+Iteration 0: GET /PeopleAsArray 2665ms
+Iteration 1: GET /PeopleAsArray 2782ms
+Iteration 2: GET /PeopleAsArray 2851ms
+Average: GET /PeopleAsArray 2766ms
+
+Iteration 0: GET /PeopleAsAsyncEnumerable 4188ms
+Iteration 1: GET /PeopleAsAsyncEnumerable 4789ms
+Iteration 2: GET /PeopleAsAsyncEnumerable 4466ms
+Average: GET /PeopleAsAsyncEnumerable 4481ms
 ```
