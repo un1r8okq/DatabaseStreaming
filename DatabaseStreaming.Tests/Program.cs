@@ -4,6 +4,7 @@ var endpoints = new string[]
 {
     "PeopleAsEnumerable",
     "PeopleAsList",
+    "PeopleAsArray",
 };
 
 var iterations = 3;
@@ -12,7 +13,7 @@ var httpClient = new HttpClient();
 foreach (var endpoint in endpoints)
 {
     var times = await MeasureAvgEndpointDuration(iterations, endpoint);
-    Console.WriteLine($"Average: GET /{endpoint} {times}ms");
+    Console.WriteLine($"Average: GET /{endpoint} {times:0}ms");
     Console.WriteLine();
 }
 
@@ -22,7 +23,7 @@ async Task<double> MeasureAvgEndpointDuration(int iterations, string endpoint)
     for (var i = 0; i < iterations; i++)
     {
         times[i] = await MeasureEndpointDuration(endpoint);
-        Console.WriteLine($"Iteration {i}: GET /{endpoint} {times[i]}ms");
+        Console.WriteLine($"Iteration {i}: GET /{endpoint} {times[i]:0}ms");
     }
 
     return times.Average();

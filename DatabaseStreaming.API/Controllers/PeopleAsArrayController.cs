@@ -5,10 +5,10 @@ namespace DatabaseStreaming.API.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class PeopleAsListController : ControllerBase
+    public class PeopleAsArrayController : ControllerBase
     {
         [HttpGet]
-        public List<Person> Get([FromServices] PersonContext dbContext) =>
-            dbContext.People.ToList();
+        public Person[] Get([FromServices] PersonContext dbContext) =>
+            dbContext.People.ToArray();
     }
 }
