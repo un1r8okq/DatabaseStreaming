@@ -1,13 +1,11 @@
 using DatabaseStreaming.Data;
-using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddDbContext<PersonContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("LocalSQLServer")));
+builder.Services.AddDbContext<PersonContext>();
 
 var app = builder.Build();
 

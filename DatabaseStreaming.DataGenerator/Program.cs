@@ -2,9 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 
 using var dbContext = new PersonContext(
-    new DbContextOptionsBuilder<PersonContext>()
-        .UseSqlServer("Data Source=XLW-5CD834231H;Database=PersonStreamingDb;Integrated Security=True;")
-        .Options);
+    new DbContextOptionsBuilder<PersonContext>().Options);
 
 var faker = new Bogus.Faker();
 const int personCount = 100000;
